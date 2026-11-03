@@ -1,0 +1,35 @@
+Validation performed in the authoring environment:
+- vault_demo.py and test_vault_demo.py passed Python py_compile.
+- Offline unit tests are provided but were not executed: OCI SDK and Paramiko
+  were unavailable and package installation stalled in this environment.
+- No live OCI calls, resource provisioning, or SSH connections were performed.
+
+Run after installing requirements.txt:
+  .venv/bin/python -m unittest -v test_vault_demo.py
+
+Then follow README.md for tenancy-specific live acceptance checks.
+
+SOFTWARE export extension:
+- Six tests in test_export_software_key.py passed using the bundled Python:
+  export request/response with mocked OCI, actual RSA-OAEP unwrap and AES-GCM
+  local check, HSM rejection, wrong password, altered blob, exclusive output
+  creation, and encrypted RSA-3072 wrapping-pair generation.
+- The local commands require cryptography only; the export command additionally
+  requires the OCI SDK and valid credentials. No live ExportKey request was made.
+- Spanish execution guide: software-export/README.md.
+
+Instance Principal extension matching the supplied setup image:
+- Four offline tests in test_getsecret.py passed: CURRENT bundle retrieval and
+  decoding, no secret content in default output, explicit demo display, and
+  signer/client configuration without an OCI user profile.
+- The six SOFTWARE export tests also passed in the same run (10 total).
+- Live instance metadata, IAM, routing, and GetSecretBundle remain unverified.
+- Spanish execution guide: instance-principal/README.md.
+
+Linux/Bash adaptation:
+- All execution guides target Linux, .venv/bin/python, Bash heredocs,
+  Linux file permissions, and standard Linux file/hash commands.
+- Instance Principal is the primary OCI Compute authentication flow.
+- Documentation and scripts packaged with LF line endings and POSIX ZIP paths.
+- Linux execution and live OCI validation were not performed in this authoring
+  environment. Previously reported offline test results remain as stated above.

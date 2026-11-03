@@ -1,0 +1,11 @@
+.venv/
+.test-deps/
+__pycache__/
+config.json
+*.vault.json
+*.restored
+lab_ssh*
+wrapping-private.pem
+wrapping-public.pem
+software-export.json
+software-key.bin

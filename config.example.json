@@ -1,0 +1,12 @@
+{
+  "profile": "DEFAULT",
+  "auth": "config",
+  "region": "us-ashburn-1",
+  "management_endpoint": "https://REPLACE-management.kms.us-ashburn-1.oraclecloud.com",
+  "crypto_endpoint": "https://REPLACE-crypto.kms.us-ashburn-1.oraclecloud.com",
+  "keys": {
+    "hsm": "ocid1.key.REPLACE_HSM",
+    "software": "ocid1.key.REPLACE_SOFTWARE"
+  },
+  "ssh_secret_id": "ocid1.vaultsecret.REPLACE"
+}
